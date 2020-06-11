@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import useHttp from '../hooks/http.hook';
 import useMessage from '../hooks/message.hook';
+import { PostCard, PostsList } from '../components';
 
 
 export default () => {
-  const [posts, setPosts] = useState([]);
+  const [posts, setPosts] = useState(null);
   const message = useMessage();
-  const { request, loading, error, clearError } = useHttp();
+  const { request, error, clearError } = useHttp();
 
   useEffect(() => {
     message(error);
@@ -23,13 +24,11 @@ export default () => {
     loadPosts();
   }, [request]);
 
-  if (loading) {
-    // set loader
+  if (!posts) {
+    return 'Loading...'
   }
 
   return (
-    posts.length
-      ? <h1>Posts!!!</h1>
-      : <p>Постов нет</p>
+    <PostsList posts={posts} />
   );
 };

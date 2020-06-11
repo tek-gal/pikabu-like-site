@@ -12,7 +12,7 @@ import useMessage from '../../hooks/message.hook';
 const CreatePostForm = () => {
   const history = useHistory();
   const message = useMessage();
-  const { token, userId } = useContext(AuthContext);
+  const { token } = useContext(AuthContext);
   const { request, error, clearError } = useHttp();
   const { Form } = useForm({
     debugForm: false,
@@ -22,7 +22,7 @@ const CreatePostForm = () => {
         await request(
           '/posts/create',
           'POST',
-          { ...values, userId },
+          { ...values },
           { Authorisation: `Bearer ${token}` },
         );
         history.push('/')

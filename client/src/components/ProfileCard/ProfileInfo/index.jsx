@@ -3,7 +3,7 @@ import InfoTable from './InfoTable';
 import AuthContext from '../../../context/AuthContext';
 
 
-export default () => {
+export default ({ numbers }) => {
   const { nickname, registrationDate } = useContext(AuthContext);
 
   return (
@@ -17,7 +17,7 @@ export default () => {
       >
         <h2>{nickname}</h2>
         <small>{registrationDate}</small>
-        <InfoTable />
+        <InfoTable numbers={numbers} />
     </div>
   );
 };

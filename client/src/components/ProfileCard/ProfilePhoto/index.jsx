@@ -1,5 +1,5 @@
 import React from "react";
-import { Image, Button } from "react-bootstrap";
+import { Image } from "react-bootstrap";
 
 
 const ProfilePhoto = () => {

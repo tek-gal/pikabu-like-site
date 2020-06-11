@@ -10,6 +10,7 @@ const mongoURI = config.get('mongoURI');
 app.use(express.json({ extended: true }));
 app.use('/auth',  require('./routes/auth.route'));
 app.use('/posts', require('./routes/post.route'));
+app.use('/user',  require('./routes/user.route'));
 
 const start = async () => {
   try {

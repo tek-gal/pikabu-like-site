@@ -1,15 +1,15 @@
 import React from "react";
 import { ListGroup } from "react-bootstrap";
 
-
 const createItem = (title, value) => {
   const listItemStyle = {
     display: "flex",
     height: "100%",
     flexDirection: "column",
+    alignItems: 'center',
     justifyContent: "space-between",
-    alignItems: 'center'
   };
+
   return (
     <ListGroup.Item style={listItemStyle}>
       <strong>{title}</strong>
@@ -18,12 +18,15 @@ const createItem = (title, value) => {
   );
 };
 
-const InfoTable = () => {
+const InfoTable = ({ numbers }) => {
+  const { rating, postCount, commentCount, minuses, pluses } = numbers;
   return (
     <ListGroup horizontal style={{ paddingTop: "1rem" }}>
-      {createItem('Рейтинг', 10)}
-      {createItem('Постов', 0)}
-      {createItem('Комментариев', 15)}
+      {createItem('Рейтинг', rating)}
+      {createItem('Постов', postCount)}
+      {createItem('Комментариев', commentCount)}
+      {createItem('Минусов', minuses)}
+      {createItem('Плюсов', pluses)}
     </ListGroup>
   );
 };

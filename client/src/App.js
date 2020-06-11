@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-d
 import { Container } from 'react-bootstrap';
 import './App.sass';
 import { Navbar, Message } from './components';
-import { HelloPage, ProfilePage, CreatePostPage, PostsPage } from './pages';
+import { HelloPage, ProfilePage, CreatePostPage, PostsPage, PostPage } from './pages';
 import { AuthContext } from './context';
 import useAuth from './hooks/auth.hook';
 
@@ -28,6 +28,7 @@ function App() {
               <Switch>
                 <Route exact path="/" component={HelloPage} />
                 <Route exact path="/posts" component={PostsPage} />
+                <Route exact path="/posts/:id" component={PostPage} />
                 {isAuthenticated && <Route exact path="/profile" component={ProfilePage} />}
                 {isAuthenticated && <Route exact path="/create-post" component={CreatePostPage} />}
                 <Redirect to="/"></Redirect>

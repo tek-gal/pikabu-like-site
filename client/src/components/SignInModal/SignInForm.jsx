@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { useForm } from 'react-form';
-import { Button, Form as BootstrapForm } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 import NicknameInput from '../NicknameInput';
 import PasswordInput from '../PasswordInput';
 

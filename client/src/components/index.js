@@ -5,3 +5,5 @@ export { default as Message } from './Message';
 export { default as ProfileCard } from './ProfileCard';
 export { default as ProfileTabs } from './ProfileTabs';
 export { default as CreatePostForm } from './CreatePostForm';
+export { default as PostCard } from './PostCard';
+export { default as PostsList } from './PostsList';
