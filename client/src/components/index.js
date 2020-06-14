@@ -7,3 +7,4 @@ export { default as ProfileTabs } from './ProfileTabs';
 export { default as CreatePostForm } from './CreatePostForm';
 export { default as PostCard } from './PostCard';
 export { default as PostsList } from './PostsList';
+export { default as ErrorBoundary } from './ErrorBoundary';

@@ -25,7 +25,7 @@ export default () => {
   }, [request]);
 
   if (!posts) {
-    return 'Loading...'
+    return null;
   }
 
   return (
