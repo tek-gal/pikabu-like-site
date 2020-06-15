@@ -5,12 +5,12 @@ import { PostsList } from '../../components';
 
 
 const ProfileTabs = ({ user }) => {
-  const { posts } = user;
+  const { posts, likedPosts, unlikedPosts } = user;
 
   return (
     <Tabs defaultActiveKey="posts" id="profile__tabs">
       <Tab eventKey="posts" title="Мои посты">
-        <PostsList posts={posts} />
+        <PostsList posts={posts} likedPosts={likedPosts} unlikedPosts={unlikedPosts} />
       </Tab>
       <Tab eventKey="comments" title="Мои комментарии">
         Мои комментарии

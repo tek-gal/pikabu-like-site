@@ -15,6 +15,8 @@ router.get(
         .populate({ path: 'owner', select: 'nickname' })
         .exec();
       
+      const user = await User.findById
+
       res.json({ posts });
     } catch (e) {
       console.log(e.message)

@@ -7,7 +7,7 @@ import useHttp from '../../hooks/http.hook';
 import useMessage from '../../hooks/message.hook';
 
 
-const PostCard = ({ post, linkActive }) => {
+const PostCard = ({ post, linkActive, relation }) => {
     const { request, error, clearError } = useHttp();
     const message = useMessage();
     const { isAuthenticated, token } = useContext(AuthContext);
@@ -60,7 +60,7 @@ const PostCard = ({ post, linkActive }) => {
                 <strong>{nickname}</strong>{' '}
                 <small>{date}</small>{' '}
             </div>
-            <Rating value={rating} onUp={onUp} onDown={onDown} isAuthenticated={isAuthenticated} />
+            <Rating value={rating} onUp={onUp} onDown={onDown} relation={relation} isAuthenticated={isAuthenticated} />
             </Card.Footer>
         </Card>
     );
